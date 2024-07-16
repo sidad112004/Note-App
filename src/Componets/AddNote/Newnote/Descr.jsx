@@ -30,6 +30,7 @@ function Descr() {
     </>
   );
 }
+ 
 
 export default Descr;  
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import Newnote from './Newnote/Newnote';
-
+import { useState } from 'react';
 function Addnote() {
+    const [temp, setTemp] = useState('');
+   
    const handle_submited_note=()=>{
        console.log("Asdf");
        

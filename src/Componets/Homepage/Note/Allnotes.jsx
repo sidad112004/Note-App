@@ -2,10 +2,10 @@ import React from 'react';
 import Note from './Note';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useMycontext } from '../../Apicalls/ContextApi';
 
 function Allnotes() {
-  const [notes, setNotes] = useState([]);
-
+  const { notes, setNotes } = useMycontext();
   useEffect(() => {
       axios.get('http://localhost:3000/notes')
           .then(res => setNotes(res.data))
@@ -18,6 +18,7 @@ function Allnotes() {
               {notes.map(note => (
                   <Note
                       key={note._id}
+                      id={note._id}
                       title={note.title}
                       description={note.description}
                       link={note.link}

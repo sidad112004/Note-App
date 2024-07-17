@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Descr from './Descr';
-
+import { useMycontext } from '../../Apicalls/ContextApi';
 function Newnote() {
-  const [title, setTitle] = useState('');
-  const [link, setLink] = useState('');
+  
+ 
+  const {title,setTitle,link,setLink}=useMycontext();
 
   return (
     <>

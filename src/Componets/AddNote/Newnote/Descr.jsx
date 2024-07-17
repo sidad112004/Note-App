@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { useMycontext } from '../../Apicalls/ContextApi';
 
 function Descr() {
-  const [des, setdes] = useState('');
+  const {description,setdescription}=useMycontext();
 
   return (
     <>
@@ -11,7 +12,7 @@ function Descr() {
         Description
       </div>
       <div  className=" text-white m-3">
-        <ReactQuill className=' bg-base-100 border-base-100 text-white' theme="snow" value={des} onChange={setdes}  />
+        <ReactQuill className=' bg-base-100 border-base-100 text-white' theme="snow" value={description} onChange={setdescription}  />
       </div>
       <div>
       

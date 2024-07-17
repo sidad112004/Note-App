@@ -4,33 +4,34 @@ import 'react-quill/dist/quill.snow.css';
 import { useState } from 'react';
 import './customQuillStyles.css';
 
-function Note() {
+function Note({ id,title, description, link }) {
     const [desdata, setdesdata] = useState('siddesh is herer to ');
     return (
+        
         <div className='w-full h-44 '>
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
             <button className="
-            w-full h-full" onClick={() => document.getElementById('my_modal_4').showModal()}>
+            w-full h-full" onClick={() => document.getElementById(id).showModal()}>
 
                 <div className="card bg-neutral-content text-accent-content w-full shadow-xl h-full">
                     <div className=" w-full h-full ">
                         <h2 className="  w-full h-full  flex justify-center items-center overflow-x-auto p-3 font-semibold">
-                            title
+                            {title}
                         </h2>
 
                     </div>
                 </div>
 
             </button>
-            <dialog  id="my_modal_4" className="modal w-full">
+            <dialog  id={id} className="modal w-full">
                 <div className="modal-box  max-w-full">
-                    <h3 className="font-bold text-lg">Hello!</h3>
+                    <h3 className="font-bold text-lg">{title}</h3>
                     <div className='mt-3'>
                         <div className='font-bold'>Description</div>
                         <ReactQuill
                             className=' text-white custom-quill'
                             theme="snow"
-                            value={desdata}
+                            value={description}
                             readOnly={true}
                             modules={{ toolbar: false }}
 

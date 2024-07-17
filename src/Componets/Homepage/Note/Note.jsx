@@ -22,7 +22,7 @@ function Note() {
                 </div>
 
             </button>
-            <dialog id="my_modal_4" className="modal">
+            <dialog  id="my_modal_4" className="modal w-full">
                 <div className="modal-box  max-w-full">
                     <h3 className="font-bold text-lg">Hello!</h3>
                     <div className='mt-3'>

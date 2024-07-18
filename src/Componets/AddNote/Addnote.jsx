@@ -6,9 +6,8 @@ function Addnote() {
    const {temp, setTemp}=useMycontext();
    const handle_submited_note=()=>{
     // e.preventDefault();
-       if(temp){
+       if(temp===true){
         setTemp(false)
-        
        }
        else{
         setTemp(true)

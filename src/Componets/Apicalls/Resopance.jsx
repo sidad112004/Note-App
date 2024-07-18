@@ -5,9 +5,12 @@ import React from 'react';
 
 function Resopance() {
   const { reverse, setreverse, temp, setTemp, title, setTitle, description, setDescription, link, setLink, notes, setNotes } = useMycontext();
-
+  const[added,setadded]=useState(false);
   useEffect(() => {
-    if (description !== '' && title !== '' && link !== '') {
+    
+   
+    if (description !== '' && title !== '') {
+      
       axios.post('http://localhost:3000/notes',
         {
           title: title,
@@ -20,6 +23,13 @@ function Resopance() {
           setTitle('');
           setDescription('');
           setLink('');
+          if(added===false){
+            setadded(true);
+          }
+          else{
+            setadded(false);
+          }
+          
 
         })
         .catch(err => console.log(err));
@@ -36,7 +46,6 @@ function Resopance() {
 
         if (reverse === true) {
 
-          
           const reversedNotes = [...notes];
 
           console.log(reversedNotes);
@@ -54,7 +63,7 @@ function Resopance() {
       .catch(err => console.log(err));
 
 
-  }, [temp, reverse]);
+  }, [temp, reverse,added]);
 
 
 

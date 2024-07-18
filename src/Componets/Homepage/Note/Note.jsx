@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './customQuillStyles.css';
 
 function Note({ id,title, description, link }) {
-    const [desdata, setdesdata] = useState('siddesh is herer to ');
+    
     return (
         
         <div className='w-full h-44 '>
@@ -16,6 +16,7 @@ function Note({ id,title, description, link }) {
                 <div className="card bg-neutral-content text-accent-content w-full shadow-xl h-full">
                     <div className=" w-full h-full ">
                         <h2 className="  w-full h-full  flex justify-center items-center overflow-x-auto p-3 font-semibold">
+                            
                             {title}
                         </h2>
 
@@ -25,9 +26,16 @@ function Note({ id,title, description, link }) {
             </button>
             <dialog  id={id} className="modal w-full">
                 <div className="modal-box  max-w-full">
-                    <h3 className="font-bold text-lg">{title}</h3>
+                    <div>
+                        <div className='font-bold'>
+                            Title:-
+                        </div>
+                        <div className=' pl-3'>
+                        {title}
+                        </div>
+                     </div>
                     <div className='mt-3'>
-                        <div className='font-bold'>Description</div>
+                        <div className='font-bold'>Description:-</div>
                         <ReactQuill
                             className=' text-white custom-quill'
                             theme="snow"
@@ -37,6 +45,13 @@ function Note({ id,title, description, link }) {
 
                             
                         />
+                        <div className=' font-bold'>
+                            Extra:-
+                            <div className=' justify-center items-center flex'>
+                           <img src={link} alt={link}/>
+                           
+                           </div>
+                        </div>
                     </div>
                     <div className="modal-action">
                         <form method="dialog">

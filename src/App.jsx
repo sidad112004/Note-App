@@ -12,10 +12,11 @@ function App() {
   const [description, setDescription] = useState("");
   const [link, setLink] = useState('');
   const [temp, setTemp] = useState(false);
+  const [reverse,setreverse]=useState(false);
 
 
   return (
-    <Mycontext.Provider value={{notes, setNotes, title, setTitle, description, setDescription, link, setLink,temp, setTemp}}>
+    <Mycontext.Provider value={{notes, setNotes, title, setTitle, description, setDescription, link, setLink,temp, setTemp,reverse,setreverse}}>
     <div >
       <Navbar/>
       <Homepage/>

@@ -7,10 +7,7 @@ function Resopance() {
     const { temp , setTemp,title, setTitle, description, setDescription, link, setLink, notes, setNotes} = useMycontext();
 
     useEffect(() => {
-        
-        console.log('Data being sent:', { title, description, link });
-        const data = { title, description, link };
-        console.log(typeof(title));
+        if(description !== '' && title !== '' && link !== ''){
         axios.post('http://localhost:3000/notes',
           {title:title,
           description:description,
@@ -18,9 +15,13 @@ function Resopance() {
          )
             .then(res => {
                 console.log(res.data);
+                setTitle('');
+                setDescription('');
+                setLink('');
                 
             })
             .catch(err => console.log(err));
+          }
         
     }, [temp]);
     
@@ -30,7 +31,7 @@ function Resopance() {
          axios.get('http://localhost:3000/notes')
             .then(res => setNotes(res.data))
             .catch(err => console.log(err));      
-    }, [temp]);
+    }, [temp,notes]);
 
  
 

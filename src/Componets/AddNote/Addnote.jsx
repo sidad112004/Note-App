@@ -8,11 +8,11 @@ function Addnote() {
     // e.preventDefault();
        if(temp){
         setTemp(false)
-        console.log(temp);
+        
        }
        else{
         setTemp(true)
-        console.log(temp);
+       
        }
        
     }

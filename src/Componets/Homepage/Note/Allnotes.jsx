@@ -6,11 +6,11 @@ import { useMycontext } from '../../Apicalls/ContextApi';
 
 function Allnotes() {
   const { notes, setNotes } = useMycontext();
-  useEffect(() => {
-      axios.get('http://localhost:3000/notes')
-          .then(res => setNotes(res.data))
-          .catch(err => console.log(err));
-  }, []);
+//   useEffect(() => {
+//       axios.get('http://localhost:3000/notes')
+//           .then(res => setNotes(res.data))
+//           .catch(err => console.log(err));
+//   }, []);
 
   return (
       <div>

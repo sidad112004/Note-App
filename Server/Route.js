@@ -6,6 +6,7 @@ const router = express.Router();
 // Add a new note
 router.post('/', async (req, res) => {
     const { title, description, link } = req.body;
+    // console.log(title, description, link);
     const newNote = new Note({
         title,
         description,

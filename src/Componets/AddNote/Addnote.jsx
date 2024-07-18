@@ -1,11 +1,19 @@
 import React from 'react';
 import Newnote from './Newnote/Newnote';
-import { useState } from 'react';
+import { useMycontext } from '../Apicalls/ContextApi.js';
 function Addnote() {
-    const [temp, setTemp] = useState('');
    
+   const {temp, setTemp}=useMycontext();
    const handle_submited_note=()=>{
-       console.log("Asdf");
+    // e.preventDefault();
+       if(temp){
+        setTemp(false)
+        console.log(temp);
+       }
+       else{
+        setTemp(true)
+        console.log(temp);
+       }
        
     }
 

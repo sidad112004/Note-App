@@ -36,6 +36,7 @@ function Resopance() {
 
         if (reverse === true) {
 
+          
           const reversedNotes = [...notes];
 
           console.log(reversedNotes);
